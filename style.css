@@ -164,6 +164,17 @@ main{
     .nav-list{
         margin: 10px 0;
     }
+    
+.nav-item{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin: 0 5px;
+    background-color: #ffffff7e;
+    padding: 5px 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
     /* hero */
     .hero{
         width: 100%;
