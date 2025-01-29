@@ -30,10 +30,55 @@
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer">
+            <div class="fotter-tittle">
+                <div class="logo">DigiBuyX</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magni placeat totam ipsa voluptatum deleniti eius, repellat beatae rem sit.</p>
+            </div>
+            <div class="footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h2>Shop Now</h2>
+                <ul>
+                    <li><a href="">Collection</a></li>
+                    <li><a href="">Mobile</a></li>
+                    <li><a href="">Kids Toys</a></li>
+                    <li><a href="">Colthes</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h2>
+                    Reach Us
+                </h2>
+                <ul>
+                    <li> <i class="fa-solid fa-location-dot"></i>   Street:  No.34, Sind Market M. A. Jinnah Road,</li>
+                    <li><i class="fa-solid fa-phone"></i>   +9231238754</li>
+                    <li><i class="fa-regular fa-envelope"></i>  DigiBuyX123@gmail.com</li>
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="socail-links">
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            
+
+        </div>
+    </footer>
 </body>
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
+    
     let product = localStorage.getItem("product");
     let productObject = JSON.parse(product);
     console.log(productObject);
@@ -61,7 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
     CartBtn.textContent="ADD TO CART"
     CartBtn.classList.add('btn');
     productText.appendChild(CartBtn);
-
+    CartBtn.addEventListener('click',()=>{
+        addToCart(productObject);
+ })
+    function addToCart(product){
+    alert('Added to the Cart ')
+    localStorage.setItem("product",JSON.stringify(product));
+    window.open("shoppingCart.html", "_blank");
+    }
 }  
 );
 

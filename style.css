@@ -3,14 +3,22 @@
   margin: 0;
   padding: 0;
   font-family: "Lato";
+  box-sizing: border-box;
 
+
+}
+body{
+    overflow-x: hidden;
 }
 header{
    
     width: 100%;
   
 }
-                            /* NAvBar */
+                 
+                    /* ------------------------------------------------------------------------------------ */
+
+           /* NAvBar */
 nav{
     width: 100%;
     height: 10vh;
@@ -55,7 +63,10 @@ main{
     width: 100%;
     height: auto;
 }
-                                            /* Hero Section  */
+                
+                    /* ------------------------------------------------------------------------------------ */
+
+                           /* Hero Section  */
 .hero{
     width: 90%;
     margin:10px auto;
@@ -97,7 +108,10 @@ main{
  height: 500px; 
  animation:animate 2s ;   
 }
-                                /* Products  */
+   
+                    /* ------------------------------------------------------------------------------------ */
+
+                             /* Products  */
 .latest-deals{
     width: 95%;
     margin: 10px auto;
@@ -170,6 +184,10 @@ main{
     color: white;
     border: 2px solid #6C63FF;
 }
+
+                        /* ------------------------------------------------------------------------------------ */
+
+
 /* Product Page Section Contetn */
 .Product-content{
     width: 95%;
@@ -217,6 +235,69 @@ main{
     font-weight: normal;
     overflow: hidden;
 }
+                   /* ------------------------------------------------------------------------------------ */
+
+
+/* Cart Section Page */
+.cartspan{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.Description{
+    width: 30%;
+}
+.cardbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.cartCard{
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    align-items: center;
+    
+}
+.product-details{
+    width: 30%;
+    display: flex;
+}
+.cart-img{
+    border: 1px solid gray;
+    width: 55%;
+}
+
+
+/* About us section */
+
+#aboutus{
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about-image{
+    width: 50%;
+
+}
+.about-text{
+    padding: 0 10px;
+}
+.about-text>h1{
+    color: #3F3D56;
+    font-weight: bolder;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+
 /* Footer */
 .footer{
     width: 100%;
@@ -269,6 +350,9 @@ font-size: 14px;
     margin: 5px 10px;
     font-size: 20px;
 }
+
+                    /* ------------------------------------------------------------------------------------ */
+
 /* Responsiveness */
 @media (max-width:480px){
     nav{
@@ -297,7 +381,7 @@ font-size: 14px;
         height: 80vh;
     }
     .hero-content{
-        width: 90%;
+        width: 100%;
         height: 80vh;
         justify-content: center;
         padding: 0 20px;
@@ -305,13 +389,14 @@ font-size: 14px;
     }
     .text{
         padding-left: 20px;
+        width: 50%;
     }
     .hero-content>.text>h1{
         font-size: 20px;
     }
     .hero-content>img{
         width: 150px;
-        height: 250px;
+        height: 350px;
         animation: none;   
     }
     /* products */
@@ -341,6 +426,17 @@ font-size: 14px;
         width: 100%;
         padding: 0 5px;
     }
+    #aboutus{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin: 10px 0;
+    }
+    .about-image{
+        width: 100%;
+    }
+
 /* footer */
 .footer{
     flex-direction: column;
@@ -356,6 +452,9 @@ font-size: 14px;
 }
 
 }
+                    /* ------------------------------------------------------------------------------------ */
+
+
 /* animations */
 @keyframes animate {
     0%{
