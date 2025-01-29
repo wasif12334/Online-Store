@@ -1,5 +1,5 @@
 let productBox = document.querySelector('.products-box');
-let display=4;
+let display=16;
 async function getData() {
     let data = await fetch('https://fakestoreapi.in/api/products');
     let response = await data.json();
