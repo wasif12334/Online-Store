@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop | DigiBuyX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DigiBuyX</div>
+            <div class="nav-list">
+            <a href="" class="nav-item">Home</a>
+            <a href="" class="nav-item">Shop</a>
+            <a href="" class="nav-item">Cart</a>
+            <a href="" class="nav-item">About us</a>
+            <a href="" class="nav-item">Contact us</a>
+        </div>
+        </nav>
+    </header>
+    <main>
+      
+            <h4 class="product-tittle"></h4>
+            <div class="Product-content">
+            <img  class="product-image" src="" alt="">
+            <div class="product-text">
+                
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    let product = localStorage.getItem("product");
+    let productObject = JSON.parse(product);
+    console.log(productObject);
+    let productText = document.querySelector('.product-text');
+    let productImage =document.querySelector('.product-image')
+    let productTittle  =document.querySelector('.product-tittle');
+    productTittle.textContent = `${productObject.title}`
+    productImage.src = `${productObject.image}`
+    productText.innerHTML =`
+                
+                <h4 class="price">Price : $<span> ${productObject.price}</span></h4>
+                <h5 >Brand : <span class="brand">${productObject.brand.toUpperCase()}</span></h5>
+                <h5 >Model : <span class="model" >${productObject.model.toUpperCase()}</span></h5>
+                <h5 >Color : <span class="color">${productObject.color.toUpperCase()}</span></h5>
+                <h5 >Cateagory : <span class="category">${productObject.category.toUpperCase()}</span></h5>
+                <h5 >Description : <p class="description">${productObject.description}</p></h5>
+                
+                
+    `
+    let buytBtn = document.createElement('Button');
+    buytBtn.textContent="Buy Now"
+    buytBtn.classList.add('btn');
+    productText.appendChild(buytBtn);
+    let CartBtn = document.createElement('Button');
+    CartBtn.textContent="ADD TO CART"
+    CartBtn.classList.add('btn');
+    productText.appendChild(CartBtn);
+
+}  
+);
+
+</script>
+</html>

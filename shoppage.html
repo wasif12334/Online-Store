@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiBuyX</title>
+    <title>shop | DigiBuyX </title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -21,23 +21,11 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="text">
-                    <h1>Shop Your <br>Favirote Product <br>From One Place</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>Itaque, doloremque!</p>
-                    <button class="btn">Explore More</button>
-                </div>
-                <img src="undraw_groceries_4via.svg" alt="">
-            </div>
-        
-        </section>
         <section class="latest-deals">
-            <h3>Browse our top cateagory products</h3>
+            <h3>Our Shop</h3>
            <div class="products-box">
 
            </div>
-           <a href="shoppage.html" target="_blank"><button class="btn-1" ><strong>More</strong></button></a>
         </section>
     </main>
     <footer>
@@ -85,6 +73,37 @@
         </div>
     </footer>
 
-</body>
+
+<script>
+    let productBox = document.querySelector('.products-box');
+
+
+
+    async function getData(size) {
+    let data = await fetch('https://fakestoreapi.in/api/products');
+    let response = await data.json();
+    
+    for(let i=0;i<size;i++){
+    let card = document.createElement('div');
+    card.classList.add('shopping-card')
+   
+    card.innerHTML += `
+    <img src="${response.products[i].image}" class="shop-img">
+    <button class="btn shopbtn">${response.products[i].brand.toUpperCase()}</button>
+    `
+    productBox.appendChild(card);
+    card.addEventListener('click',()=>{
+        let productId = response.products[i];
+        GetInfo(productId);
+    })
+    }
+}
+getData(36);
+function GetInfo(productId) {
+    localStorage.setItem("product",JSON.stringify(productId));
+    window.open("product.html", "_blank");
+}
+</script>
 <script src="script.js"></script>
+</body>
 </html>

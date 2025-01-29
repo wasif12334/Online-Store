@@ -1,19 +1,28 @@
 let productBox = document.querySelector('.products-box');
-let display=16;
-async function getData() {
+
+
+
+async function getData(size) {
     let data = await fetch('https://fakestoreapi.in/api/products');
     let response = await data.json();
-    console.log(response.products);
-    for(let i=0;i<display;i++){
+    
+    for(let i=0;i<size;i++){
     let card = document.createElement('div');
     card.classList.add('shopping-card')
    
     card.innerHTML += `
     <img src="${response.products[i].image}" class="shop-img">
-    <button class="btn shopbtn">${response.products[i].brand.toUpperCase()}<button>
+    <button class="btn shopbtn">${response.products[i].brand.toUpperCase()}</button>
     `
     productBox.appendChild(card);
-    
+    card.addEventListener('click',()=>{
+        let productId = response.products[i];
+        GetInfo(productId);
+    })
     }
 }
-getData();
+getData(8);
+function GetInfo(productId) {
+    localStorage.setItem("product",JSON.stringify(productId));
+    window.open("product.html", "_blank");
+}
