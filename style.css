@@ -193,11 +193,11 @@ main{
 }
     /* hero */
     .hero{
-        width: 100%;
+        width: 90%;
         height: 80vh;
     }
     .hero-content{
-        width: 95%;
+        width: 90%;
         height: 80vh;
         justify-content: center;
         padding: 0 20px;
@@ -210,7 +210,7 @@ main{
         font-size: 20px;
     }
     .hero-content>img{
-        width: 200px;
+        width: 150px;
         height: 250px;
         animation: none;   
     }
