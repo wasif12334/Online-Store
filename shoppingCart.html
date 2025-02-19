@@ -41,7 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
      let product = localStorage.getItem("product");
     let productObject = JSON.parse(product);
+    console.log(product);
+    
     let cart=[];
+    cart.push(productObject);
+    console.log(cart[1]);
+    
     let cartbox =document.querySelector('.cartbox');
     
     let cartCard = document.createElement('div');

@@ -11,7 +11,7 @@ async function getData(size) {
     card.classList.add('shopping-card')
    
     card.innerHTML += `
-    <img src="${response.products[i].image}" class="shop-img">
+    <img src="${response.products[i].image}"alt= "${response.products[i].brand}" class="shop-img">
     <button class="btn shopbtn">${response.products[i].brand.toUpperCase()}</button>
     `
     productBox.appendChild(card);
